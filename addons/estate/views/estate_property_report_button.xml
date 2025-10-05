@@ -1,0 +1,13 @@
+<odoo>
+  <record id="view_estate_property_form_inherit_report" model="ir.ui.view">
+    <field name="name">estate.property.form.inherit.report</field>
+    <field name="model">estate.property</field>
+    <field name="inherit_id" ref="estate.view_estate_property_form"/>
+    <field name="arch" type="xml">
+      <xpath expr="//form/header" position="inside">
+        <button name="%(estate.action_report_estate_property)d"
+                type="action" string="Print Property" class="btn-secondary"/>
+      </xpath>
+    </field>
+  </record>
+</odoo>

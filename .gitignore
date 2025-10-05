@@ -1,11 +1,22 @@
-# Ignore Python cache
 __pycache__/
-*.pyc
-
-# Ignore virtual environments
+*.py[cod]
+*.egg-info/
+.eggs/
+.venv/
 venv/
-
-# Ignore system files
+.env
 *.log
+.odoorc
+filestore/
+sessions/
+*.db
+*.sqlite
+.vscode/
+.idea/
 *.swp
-*.tmp
+.DS_Store
+Thumbs.db
+dist/
+build/
+.mypy_cache/
+
