@@ -1,0 +1,58 @@
+<odoo>
+  <record id="view_estate_property_tree" model="ir.ui.view">
+    <field name="name">estate.property.tree</field>
+    <field name="model">estate.property</field>
+    <field name="arch" type="xml">
+      <tree>
+        <field name="name"/>
+        <field name="state"/>
+        <field name="expected_price"/>
+        <field name="selling_price"/>
+        <field name="property_type_id"/>
+      </tree>
+    </field>
+  </record>
+
+  <record id="view_estate_property_form" model="ir.ui.view">
+    <field name="name">estate.property.form</field>
+    <field name="model">estate.property</field>
+    <field name="arch" type="xml">
+      <form string="Property">
+        <header>
+          <button name="action_mark_sold" type="object" string="Sell" class="btn-primary"/>
+          <button name="action_mark_canceled" type="object" string="Cancel"/>
+        </header>
+        <sheet>
+          <group>
+            <field name="name"/>
+            <field name="state" readonly="1"/>
+            <field name="currency_id"/>
+            <field name="expected_price" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+            <field name="selling_price" widget="monetary" options="{'currency_field': 'currency_id'}" readonly="1"/>
+            <field name="property_type_id"/>
+          </group>
+          <group string="Details">
+            <field name="bedrooms"/>
+            <field name="living_area"/>
+            <field name="facades"/>
+            <field name="garage"/>
+            <field name="garden"/>
+            <field name="garden_area"/>
+            <field name="garden_orientation"/>
+          </group>
+          <notebook>
+            <page string="Offers">
+              <field name="offer_ids" context="{'default_property_id': active_id}">
+                <tree>
+                  <field name="partner_id"/>
+                  <field name="price"/>
+                  <field name="status"/>
+                </tree>
+              </field>
+            </page>
+          </notebook>
+        </sheet>
+      </form>
+    </field>
+  </record>
+</odoo>
