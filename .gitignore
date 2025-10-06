@@ -20,3 +20,13 @@ dist/
 build/
 .mypy_cache/
 
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+.vscode/
+.idea/
+*.log
+.DS_Store
+Thumbs.db
